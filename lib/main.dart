@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'first_page.dart';
+import 'package:routes/main.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: "routes",
+        // home: SecondPage(),
+        //named routes:
+        // initialRoute: "/",
+        // routes: {
+        //   "/": (context) => const FirstPage(),
+        //   "/second": (context) => const SecondPage()
+        // },
+        onGenerateRoute: (RouteSettings routeSettings) {
+          switch (routeSettings.name) {
+            case "/":
+              return MaterialPageRoute(builder: (context) => const FirstPage());
+            case "/second":
+              return MaterialPageRoute(
+                  builder: (context) => const SecondPage());
+          }
+        });
+  }
+}
