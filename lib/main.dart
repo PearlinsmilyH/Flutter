@@ -14,8 +14,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  StreamController<String> streamController = StreamController();           //this instance can emit events of type String
-  TextEditingController textEditingController = TextEditingController();    // used to control the text input field and retrieve its value.
+  StreamController<String> streamController = StreamController(); //getting the instance of StreamController() in streamController
+  TextEditingController textEditingController = TextEditingController(); // used to control the text input field and retrieve its value.
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +26,16 @@ class _MyAppState extends State<MyApp> {
           title: Text("Stream Controller"),
         ),
         body: Center(
-            child: Column(                                  //column display its children in a vertical arrangement
+            child: Column(
+          //column display its children in a vertical arrangement
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             StreamBuilder<String>(
-                stream: streamController.stream,
+                stream: streamController.stream, //
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     String output = snapshot.data.toString();
-                    return Text(output.toUpperCase(),                //displays the name in uppercase
+                    return Text(output,
                         style: TextStyle(fontSize: 15));
                   } else {
                     return Text("No data", style: TextStyle(fontSize: 24));
@@ -44,17 +45,18 @@ class _MyAppState extends State<MyApp> {
             SizedBox(
                 width: 200,
                 child: TextField(
-                   controller: textEditingController,
+                    controller: textEditingController,
                     decoration: InputDecoration(
                         hintText: "Enter your name",
                         border: OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(5)))))),
-            SizedBox(height: 40.0),        //space between the textbox and the button
+            SizedBox(height: 40.0), //space between the textbox and the button
             ElevatedButton(
                 onPressed: () {
                   String text = textEditingController.text;
-                  streamController.add(text);                      //this will add the text in the "no data" part
+                  streamController
+                      .add(text); //this will add the text in the "no data" part
                 },
                 child: Text("submit"))
           ],
