@@ -20,7 +20,7 @@ class MyCardWidget extends StatelessWidget {
                 title: Text('Smily', style: TextStyle(fontSize: 30.0)),
                 subtitle: Text('Best of Smily Music.', style: TextStyle(fontSize: 18.0)),
               ),
-              ButtonBar(
+              ButtonBar(                                                                                 //used to arrange buttons horizontally within a row
                 children: [
                   ElevatedButton(
                     child: Text('Play'),
