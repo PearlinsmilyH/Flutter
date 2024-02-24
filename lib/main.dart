@@ -34,9 +34,9 @@ class Myapp extends StatelessWidget {
                 leading: Icon(Icons.inbox),
                 title: Text("All inboxes"),
               ),
-              Divider(height: 10),
-              ListTile(
-                leading: Icon(Icons.people),
+              Divider(height: 10),                                                //space between each tiles
+              ListTile(           
+                leading: Icon(Icons.people),                                      //displays icon before the icon's name
                 title: Text("Social"),
               ),
               Divider(height: 10),
