@@ -30,7 +30,7 @@ class NetworkImageGridView extends StatelessWidget {
       ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+          crossAxisCount: 2,    //no. of images in a row
           mainAxisSpacing: 8.0, //spacing between rows
           crossAxisSpacing: 8.0, //spacing between columns
         ),
