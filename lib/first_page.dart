@@ -6,7 +6,6 @@ void main() {
 }
 
 class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
 
   @override
   State<FirstPage> createState() => _FirstPageState();
@@ -22,9 +21,9 @@ class _FirstPageState extends State<FirstPage> {
       ),
       body: Center(
           child: ElevatedButton(
-        child: Text("Go to second page"),
+        child: Text("Go to next page"),
         onPressed: () {
-          Navigator.of(context).pushNamed("/second");
+          Navigator.of(context).pushNamed("/second");                      //navigate to next page
         },
       )),
     );
@@ -32,7 +31,6 @@ class _FirstPageState extends State<FirstPage> {
 }
 
 class SecondPage extends StatefulWidget {
-  const SecondPage({super.key});
 
   @override
   State<SecondPage> createState() => _SecondPageState();
@@ -45,9 +43,9 @@ class _SecondPageState extends State<SecondPage> {
       appBar: AppBar(title: Text("Second Page"), backgroundColor: Colors.blue),
       body: Center(
           child: ElevatedButton(
-        child: Text("Go back"),
+        child: Text("Go to previous page"),
         onPressed: () {
-          Navigator.pop(context);
+          Navigator.pop(context);                                         //navigate to previous page
         },
       )),
     );
