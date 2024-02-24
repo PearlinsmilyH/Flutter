@@ -16,21 +16,21 @@ class Myapp extends StatelessWidget {
           backgroundColor: Colors.yellow,
           child: Column(
             children: [
-              UserAccountsDrawerHeader(
+              UserAccountsDrawerHeader(                                              //mentions current profile which is being used
                 accountName: Text("Pearlin"),
                 accountEmail: Text("smily@gmail.com"),
                 currentAccountPicture: CircleAvatar(
                   backgroundColor: Colors.green,
                   child: Text("PS"),
                 ),
-                otherAccountsPictures: [
+                otherAccountsPictures: [                                            //additional accounts 
                   CircleAvatar(
                     backgroundColor: Colors.grey,
                     child: Text("sp"),
                   )
                 ],
               ),
-              ListTile(
+              ListTile(                                                          
                 leading: Icon(Icons.inbox),
                 title: Text("All inboxes"),
               ),
