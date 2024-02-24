@@ -30,13 +30,13 @@ class ImageListView extends StatelessWidget {
                                                                 //It is suitable for creating long lists.
         itemCount: imagePaths.length,
         itemBuilder: (_, index) {
-          return Expanded(
+          return Expanded(                                      //Expanded widget is used to make its child expand to fill the available space.
             child: ListTile(
               title: Image.asset(
                 imagePaths[index],
                 // width: 500,
                 // height: 500,
-                fit: BoxFit.cover,
+                fit: BoxFit.cover,                              //ensures that the image covers the entire space of the ListTile.
               ),
               onTap: () {
                 // Handle image tap event
