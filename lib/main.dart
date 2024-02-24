@@ -24,8 +24,7 @@ class MyApp extends StatelessWidget {
             case "/":
               return MaterialPageRoute(builder: (context) => const FirstPage());
             case "/second":
-              return MaterialPageRoute(
-                  builder: (context) => const SecondPage());
+              return MaterialPageRoute(builder: (context) => const SecondPage());
           }
         });
   }
