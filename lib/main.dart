@@ -26,7 +26,8 @@ class ImageListView extends StatelessWidget {
       appBar: AppBar(
         title: Text('Image ListView'),
       ),
-      body: ListView.builder(
+      body: ListView.builder(                                   //This widget creates a scrollable, linear array of widgets whose contents are dynamically generated using a builder function. 
+                                                                //It is suitable for creating long lists.
         itemCount: imagePaths.length,
         itemBuilder: (_, index) {
           return Expanded(
