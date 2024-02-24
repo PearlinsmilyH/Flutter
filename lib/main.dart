@@ -21,10 +21,12 @@ class MyApp extends StatelessWidget {
         // },
         onGenerateRoute: (RouteSettings routeSettings) {
           switch (routeSettings.name) {
-            case "/":
-              return MaterialPageRoute(builder: (context) => const FirstPage());
+            case "/":                                                                  
+              return MaterialPageRoute(builder: (context) => const FirstPage());        //When ("/") route is requested,FirstPage will be displayed.       
             case "/second":
-              return MaterialPageRoute(builder: (context) => const SecondPage());
+              return MaterialPageRoute(builder: (context) => const SecondPage());      //when the "/second" route is requested, SecondPage will be displayed.
+
+
           }
         });
   }
