@@ -13,8 +13,7 @@ class MyCardWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(15.0),
           ),
           color: const Color.fromARGB(255, 212, 54, 244),
-          elevation: 10,
-          child: ListView( // Wrap with ListView
+          child: ListView(                                                                                // Wrap with ListView
             children: [
               ListTile(
                 leading: Icon(Icons.album, size: 60),
