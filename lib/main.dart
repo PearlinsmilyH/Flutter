@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
         ),
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: 0,
+          currentIndex: 0,                                    //to indicate the currently selected item
           fixedColor: Colors.pink,
           items: [
             BottomNavigationBarItem(
