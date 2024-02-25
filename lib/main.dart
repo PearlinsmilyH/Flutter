@@ -7,15 +7,15 @@ void main() {
   runApp(MyApp());
 }
 
-class Counter with ChangeNotifier {
+class Counter with ChangeNotifier {                               //ChangeNotifier notify its listeners when its state changes
   int _count = 0;
 
-  int get count => _count;
+  int get count => _count;                                        //public getter method "count" that allows external classes to access the current count value
 
   void increment() {
     _count++;
-    notifyListeners();
-  }
+    notifyListeners();                                           //This notifies any listeners that are dependent on the count value that the state has changed, 
+  }                                                              //ask them to rebuild and reflect the updated count value in other pages.
 
   void decrement() {
     _count--;
