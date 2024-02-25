@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final counter = Provider.of<Counter>(context);
+    final counter = Provider.of<Counter>(context);                   //accessing the Counter provided by the ChangeNotifierProvider using the Provider.of<Counter>(context)
 
     return Scaffold(
       appBar: AppBar(
