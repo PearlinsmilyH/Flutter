@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
             title: Text("Rows and Column"), backgroundColor: Colors.purple),
         body:
-        Row(                                                                               
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,  
+        Row(                                                                              // A row widget is used to arrange child widgets horizontally in a row
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,                               //A column widget is used to arrange child widgets vertically in a column
           children:<Widget>
           [   
             Container(
