@@ -25,7 +25,7 @@ class Counter with ChangeNotifier {                               //ChangeNotifi
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
+    return ChangeNotifierProvider(                              //listen to changes using and update accordingly when changes occur.
       create: (context) => Counter(),
       child: MaterialApp(
         title: 'Global State Example',
