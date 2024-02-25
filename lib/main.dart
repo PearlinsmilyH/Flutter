@@ -63,8 +63,8 @@ class _LocationScreenState extends State<LocationScreen> {
 }
 
 
-/*Geolocator package to access the device's location. When the user taps the "Get Location" button, it calls the _getLocation method,
-which asynchronously retrieves the current position using the getCurrentPosition method provided by Geolocator. Once the position is 
-obtained, it updates the _locationMessage string with the latitude and longitude coordinates, which triggers a UI update through the
+/*Geolocator package is used to access the device's location. When we taps the "Get Location" button, it calls the _getLocation method,
+which retrieves the current position using the getCurrentPosition method provided by Geolocator. Once the position is 
+obtained, it updates the _locationMessage string with the latitude and longitude values, which update through the
 setState method, displaying the location information on the screen. If any error occurs during the location retrieval process, it is 
 caught and printed to the console*/
