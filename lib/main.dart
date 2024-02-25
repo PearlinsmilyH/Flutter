@@ -6,7 +6,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +28,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String responseBody = ''; // Global Variable to store response body
 
   postData() async {
-    var response = await http.post(Uri.parse("https://jsonplaceholder.typicode.com/posts/"),  //local variable
+    var response = await http.post(Uri.parse("https://jsonplaceholder.typicode.com/posts/"),  //local variable      //is a fake online REST API that allows you to test different HTTP methods, 
+    );                                                                                                              //including POST requests, without actually sending data to a real server.
       body: {"id": 1.toString(), "name": "smily", "email": "smily@gmail.com"},
-    );
     setState(() {
-      responseBody = response.body; // Update response body variable
+      responseBody = response.body;                                                                                 // Update response body variable
     });
     print(response.body);
   }
