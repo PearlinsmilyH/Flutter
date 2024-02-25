@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:geolocator/geolocator.dart';                                 // for accessing the device's location
 
 void main() {
   runApp(MyApp());
