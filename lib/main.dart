@@ -29,7 +29,7 @@ Widget build(BuildContext context) {
 		) ,
 	body: SafeArea(child: Row(children: tiles)),
 	floatingActionButton: FloatingActionButton(
-		child: Icon(Icons.sentiment_very_satisfied), onPressed: swapTiles),
+		child: Icon(Icons.sentiment_very_satisfied), onPressed: swapTiles),    //Swaps the positions of the first two tiles in the tiles list when the FloatingActionButton is pressed. 
 	);
 }
 
