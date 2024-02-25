@@ -7,7 +7,7 @@ void main() {
 class UppercaseTransformer extends StreamTransformerBase<String, String> {
   @override
   Stream<String> bind(Stream<String> stream) {
-    return stream.map((text) => text.toUpperCase());
+    return stream.map((text) => text.toUpperCase());                                      //overrides the bind method to map the input text stream to uppercase text
   }
 }
 
@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   StreamTransformer<String, String> _uppercaseTransformer =  UppercaseTransformer();   //getting the instance of UppercaseTransformer() in _uppercaseTransformer   
 
   @override
-  void initState() {                                   //initializing the state of the widget
+  void initState() {                                                                   //initializing the state of the widget
     super.initState();
     _uppercaseTransformer = UppercaseTransformer();
   }
@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
               ElevatedButton(
                 onPressed: () {
                   String text = textEditingController.text;
-                  streamController.add(text); // Text is added to the stream
+                  streamController.add(text);                                                 // Text is added to the stream
                 },
                 child: Text("Ok"),
               )
@@ -85,3 +85,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+/*a StreamTransformer is used to transform the text entered in the text field to uppercase before displaying it on the screen. 
+The UppercaseTransformer class implements StreamTransformerBase and overrides the bind method to map the input text stream to uppercase text.
+Then, in the build method, the text stream is transformed using this transformer before displaying it in the StreamBuilder. This allows for text
+transformation operations to be applied to the stream data before displaying it in the UI.*/
