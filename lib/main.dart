@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
             child: Column(
-          //column display its children in a vertical arrangement
+                                                                     //column display its children in a vertical arrangement
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             StreamBuilder<String>(                                  //The StreamBuilder listens to changes in the data stream and updates the UI accordingly, showing                                                                  
