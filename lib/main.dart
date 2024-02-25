@@ -1,3 +1,9 @@
+//Import images from local files by creating assets , to add assets to our appln.
+//  add assets section in pubspec.yaml, a list of images displayed by fetched from the 
+// imagePaths list using ListView.builder, with each image wrapped in a ListTile widget
+// inside an Expanded widget to ensure proper layout.
+
+
 import 'package:flutter/material.dart';
 
 void main() {
