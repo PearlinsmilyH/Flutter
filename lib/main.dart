@@ -25,15 +25,17 @@ class _CameraAppState extends State<CameraApp> {
   late bool _isCameraInitialized;
  
   @override
-  void initState() {
+  void initState() {                                                           //where the camera initialization process begins
     super.initState();
     _isCameraInitialized = false;
-    _initializeCamera();
+    _initializeCamera();                                                      //setting up the CameraController
   }
  
   Future<void> _initializeCamera() async {
     _cameras = await availableCameras();
-    _controller = CameraController(_cameras[0], ResolutionPreset.medium);
+    _controller = CameraController(_cameras[0], ResolutionPreset.medium);      /*retrieves a list of available cameras on the device.
+                                                                                 _cameras[0]: Once the cameras are retrieved, the first camera from the list is selected. 
+                                                                                 This assumes that there is at least one camera available on the device, resolution setting for capturing photos or videos.*/
  
     await _controller.initialize();
  
@@ -53,8 +55,8 @@ class _CameraAppState extends State<CameraApp> {
   void _capturePhoto() async {
     try {
       if (_controller.value.isInitialized) {
-        XFile file = await _controller.takePicture();
-        // Do something with the captured photo file (e.g., display it)
+        XFile file = await _controller.takePicture();                               //format for saving images
+                                                                                    // Do something with the captured photo file (e.g., display it)
         print('Photo captured: ${file.path}');
       }
     } catch (e) {
@@ -65,7 +67,7 @@ class _CameraAppState extends State<CameraApp> {
   @override
   Widget build(BuildContext context) {
     if (!_isCameraInitialized) {
-      return Container(); // Placeholder or loading indicator while initializing
+      return Container();                                                         // Placeholder or loading indicator while initializing
     }
  
     return Scaffold(
@@ -73,7 +75,7 @@ class _CameraAppState extends State<CameraApp> {
         title: Text('Camera App'),
       ),
       body: AspectRatio(
-        aspectRatio: _controller.value.aspectRatio,
+        aspectRatio: _controller.value.aspectRatio,                             //Maintains the aspect ratio of the camera preview
         child: CameraPreview(_controller),
       ),
       floatingActionButton: FloatingActionButton(
