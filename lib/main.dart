@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: DropdownButton<String>(
-            underline: Container(),
+            underline: Container(),                             //remove borders
             // Define the dropdown menu items
             items: items.map((String value) {
               return DropdownMenuItem<String>(
