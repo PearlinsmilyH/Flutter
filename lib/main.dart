@@ -20,7 +20,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // Define a TextEditingController to manage the state of the input field
+                                                                          // Define a TextEditingController to manage the state of the input field
   final _textController = TextEditingController();
 
   @override
@@ -37,14 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             TextField(
               controller:
-                  _textController, // Assign the controller to the TextField
+                  _textController,                                          // Assign the controller to the TextField
               decoration: InputDecoration(
                   hintText: "Name",
                   labelText: 'Enter your name',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
             ),
-            SizedBox(height: 20.0), //to create space
+            SizedBox(height: 20.0),                                            //to create space
             ElevatedButton(
               child: Text('Submit'),
               onPressed: () {
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     return AlertDialog(
                       title: Text('Details'),
                       content: Text(_textController.text,
-                          style: TextStyle(fontSize: 32)),
+                          style: TextStyle(fontSize: 32)), 
                       actions: <Widget>[
                         TextButton(
                             child: Text('Okay'),
