@@ -1,4 +1,4 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';                              //provides functionality for checking network connectivity
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +12,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
-      ),
       home: ConnectivityPage(),
     );
   }
@@ -34,12 +31,12 @@ class _ConnectivityPageState extends State<ConnectivityPage> {
   void initState() {
     super.initState();
     data = "Checking...";
-    checkStatus();
+    checkStatus();                                                                   // method to determine the current network status
   }
 
   Future<void> checkStatus() async {
-    final connectivityResult = await Connectivity().checkConnectivity();
-    if (connectivityResult == ConnectivityResult.mobile) {
+    final connectivityResult = await Connectivity().checkConnectivity();             // connectivity result is obtained using Connectivity().checkConnectivity() 
+    if (connectivityResult == ConnectivityResult.mobile) {                           
       data = "Mobile Network";
     } else if (connectivityResult == ConnectivityResult.wifi) {
       data = "Wifi network";
@@ -77,8 +74,11 @@ class _ConnectivityPageState extends State<ConnectivityPage> {
             FutureBuilder(
               future: checkStatus(),
               builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
+                if (snapshot.connectionState == ConnectionState.waiting) {                /*While waiting for the future to complete (checkStatus()), a CircularProgressIndicator is shown.
+                                                                                            Once the future completes, the network status is displayed using a Text widget.*/
+                  
+                  return CircularProgressIndicator();                                     /* displays a circular loading indicator,used to indicate that some process
+                                                                                            is ongoing and the user should wait for it to complete.*/
                 } else {
                   return Text(data);
                 }
